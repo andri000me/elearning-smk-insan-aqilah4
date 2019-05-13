@@ -1,0 +1,53 @@
+<?php
+if(isset($_POST['userz'], $_POST['passz'])) {
+		include "../../config/server.php";
+		require("../../config/fungsi_thn.php");		
+		$userz = mysql_real_escape_string($_REQUEST['userz']);
+		$passz = mysql_real_escape_string($_REQUEST['passz']);		
+		$loginz = mysql_real_escape_string($_REQUEST['loginz']);
+		
+		if($loginz == "admin"){$peran = "1"; $pass = md5($passz);} 
+		else if($loginz == "guru"){$peran = "2"; $pass = md5($passz); }
+		else if($loginz == "siswa"){$peran = "3"; $Login ="3";} 
+		else {$peran="0";}
+		
+		$sqladmin = mysql_num_rows(mysql_query("select * from cbt_user where Username = '$userz' and Password = '$pass' and login = '$peran'  and Status = '1'"));		
+		$sqladmin2 = mysql_num_rows(mysql_query("select * from cbt_siswa where XNomerUjian = '$userz' and XPassword = '$passz' and '$Login' = '$peran'  "));
+		if($sqladmin>0){$sqltahun = mysql_query("select * from cbt_setid where XStatus = '1'");
+						$st = mysql_fetch_array($sqltahun);
+						$tahunz = $st['XKodeAY'];
+						$sqlsekolah = mysql_query("select * from cbt_admin");
+						$sk = mysql_fetch_array($sqlsekolah);
+					
+						setcookie('beeuser',$userz);
+						setcookie('beelogin',$loginz);
+						setcookie('beepassz',$passz);
+						setcookie('beetahun',$tahunz);
+						setcookie('beesekolah',$sk['XKodeSekolah']);
+						$_COOKIE['beeuser']==$userz;
+						$_COOKIE['beelogin']==$loginz;
+						$_COOKIE['beepassz']==$passz;
+						$_COOKIE['beetahun']==$tahunz;
+						$_COOKIE['beesekolah']==$sk['XKodeSekolah'];						
+						header("Location: ./?");
+						} 
+		else if($sqladmin2>0){$sqltahun = mysql_query("select * from cbt_setid where XStatus = '1'");
+						$st = mysql_fetch_array($sqltahun);
+						$tahunz = $st['XKodeAY'];
+						$sqlsekolah = mysql_query("select * from cbt_admin");
+						$sk = mysql_fetch_array($sqlsekolah);
+					
+						setcookie('beeuser',$userz);
+						setcookie('beelogin',$loginz);
+						setcookie('beetahun',$tahunz);
+						setcookie('beesekolah',$sk['XKodeSekolah']);
+						$_COOKIE['beeuser']==$userz;
+						$_COOKIE['beelogin']==$loginz;
+						$_COOKIE['beetahun']==$tahunz;
+						$_COOKIE['beesekolah']==$sk['XKodeSekolah'];						
+						header("Location: ./?");
+						} 	
+
+		
+		else { header("Location: login.php"); }} 
+else {header("Location: login.php");}

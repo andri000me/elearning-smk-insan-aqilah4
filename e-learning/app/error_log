@@ -1,0 +1,8 @@
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beelogin in /home/smkr2668/public_html/e-learning/e-learning/app/index.php on line 60
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beeuser in /home/smkr2668/public_html/e-learning/e-learning/app/index.php on line 66
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beelogin in /home/smkr2668/public_html/e-learning/e-learning/app/index.php on line 219
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beelogin in /home/smkr2668/public_html/e-learning/e-learning/app/index.php on line 225
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/smkr2668/public_html/e-learning/e-learning/app/index.php:223) in /home/smkr2668/public_html/e-learning/e-learning/app/none.php on line 10
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beelogin in /home/smkr2668/public_html/e-learning/e-learning/app/none.php on line 11
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beelogin in /home/smkr2668/public_html/e-learning/e-learning/app/none.php on line 11
+[08-May-2019 12:20:34 Asia/Jakarta] PHP Notice:  Undefined index: beelogin in /home/smkr2668/public_html/e-learning/e-learning/app/none.php on line 141
